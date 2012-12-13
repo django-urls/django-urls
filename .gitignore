@@ -1,4 +1,6 @@
+*.db
 *.log
 *.pot
 *.pyc
+*.swp
 local_settings.py

@@ -1,0 +1,90 @@
+[
+    {
+        "pk": 1,
+        "model": "auth.user",
+        "fields": {
+            "username": "admin",
+            "first_name": "",
+            "last_name": "",
+            "is_active": true,
+            "is_superuser": true,
+            "is_staff": true,
+            "last_login": "2012-12-01T00:00:00.000Z",
+            "groups": [],
+            "user_permissions": [],
+            "password": "pbkdf2_sha256$10000$ZO7POAPc8ZMI$xgYq0J7EXHIfrCFq1XCg0LvTyC2SlUltNjkvRVPQI48=",
+            "email": "admin@example.com",
+            "date_joined": "2012-12-01T00:00:00.000Z"
+        }
+    },
+    {
+        "pk": 1,
+        "model": "url.url",
+        "fields": {
+            "url": "robots.txt",
+            "enabled": true,
+            "destination": "news.views.robots",
+            "type": "exact_to_view"
+        }
+    },
+    {
+        "pk": 2,
+        "model": "url.url",
+        "fields": {
+            "url": "^articles/2003/$",
+            "enabled": true,
+            "destination": "news.views.special_case_2003",
+            "type": "regex_to_view"
+        }
+    },
+    {
+        "pk": 3,
+        "model": "url.url",
+        "fields": {
+            "url": "^articles/(?P<year>\\d{4})/$",
+            "enabled": true,
+            "destination": "news.views.year_archive",
+            "type": "regex_to_view"
+        }
+    },
+    {
+        "pk": 4,
+        "model": "url.url",
+        "fields": {
+            "url": "^articles/(?P<year>\\d{4})/(?P<month>\\d{2})/$",
+            "enabled": true,
+            "destination": "news.views.month_archive",
+            "type": "regex_to_view"
+        }
+    },
+    {
+        "pk": 5,
+        "model": "url.url",
+        "fields": {
+            "url": "^articles/(?P<year>\\d{4})/(?P<month>\\d{2})/(?P<day>\\d{2})/$",
+            "enabled": true,
+            "destination": "news.views.article_detail",
+            "type": "regex_to_view"
+        }
+    },
+    {
+        "pk": 6,
+        "model": "url.url",
+        "fields": {
+            "url": "old/old.htm",
+            "enabled": true,
+            "destination": "new/new.html",
+            "type": "exact_to_redirect"
+        }
+    },
+    {
+        "pk": 7,
+        "model": "url.url",
+        "fields": {
+            "url": "^iphone|ipad|ipod|m$",
+            "enabled": true,
+            "destination": "mobile",
+            "type": "regex_to_redirect"
+        }
+    }
+]

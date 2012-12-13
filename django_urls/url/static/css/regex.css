@@ -1,0 +1,24 @@
+.module pre {
+    font-family: Monospace;
+    margin: 0;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+    .module pre a {
+    }
+
+        .module pre a:hover,
+        .module pre a:hover span {
+            border-bottom: 1px solid #036;
+            color: #036;
+        }
+
+    .module pre a[target="_blank"] {
+        background: transparent url("../img/icon_external.gif") no-repeat center right;
+        padding-right: 18px;
+    }
+
+    .module pre span {
+        color: #b8b8b8;
+    }
