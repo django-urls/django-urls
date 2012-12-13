@@ -12,3 +12,5 @@ django-urls
     ./manage.py runserver
 
 Go to http://127.0.0.1:8000/admin/ and login with username: **admin** and password: **admin**.
+
+![django-urls screenshot](https://raw.github.com/django-urls/django-urls/master/screenshot.png "")
