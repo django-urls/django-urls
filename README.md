@@ -23,7 +23,7 @@ Manage URL Patterns and Views via the Django admin.
 
 Go to http://127.0.0.1:8000/admin/ and login with username: **admin** and password: **admin**.
 
-## TODO
+## TODO / Pull Requests Wanted
 
 - make pip installable
 - make installation simple by adding app to INSTALLED_APPS, MIDDLEWARE_CLASSES, or similar
