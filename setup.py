@@ -9,7 +9,7 @@ setup(
     author_email='zachborboa@gmail.com',
     url='https://github.com/django-urls/django-urls',
     license='BSD',
-    packages=find_packages(),
+    packages=find_packages(exclude=('example', 'tests')),
     include_package_data=True,
     zip_safe=False,
     classifiers=[
