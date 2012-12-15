@@ -32,4 +32,5 @@ Go to http://127.0.0.1:8000/admin/ and login with username: **admin** and passwo
 - add exact match to temporary redirect 302
 - add regex match to permanent redirect 301
 - add regex match to temporary redirect 302
+- add regex match to include (e.g. add the ability to use a destination like include('django.contrib.admindocs.urls'))
 - add unit tests (relative redirect, absolute redirect, regex match, 404, etc.)
