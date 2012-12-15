@@ -1,7 +1,9 @@
 from django.conf.urls import patterns, url
 from django.views.generic import RedirectView
 
-from url.models import Url
+from models import Url
+
+__all__ = ['django_urls',]
 
 
 def django_urls():
