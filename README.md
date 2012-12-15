@@ -13,18 +13,22 @@ Manage URL Patterns and Views via the Django admin.
 
 ## Installation
 
-Add both **django_urls** and **news** to `INSTALLED_APPS` in `settings.py`.
+1. Install django-urls.
 
-    INSTALLED_APPS = (
-        # ...
-        'django_urls',
-        'news',
-    )
+        pip install -e git+git://github.com/django-urls/django-urls.git#egg=django_urls
 
-And add django_urls to `urls.py`.
+2. Add **django_urls** to `INSTALLED_APPS` in `settings.py`.
 
-    from django_urls import django_urls
-    urlpatterns += django_urls()
+        INSTALLED_APPS = (
+            # ...
+            'django_urls',
+            # ...
+        )
+
+3. Add django_urls to `urls.py`.
+
+        from django_urls import django_urls
+        urlpatterns += django_urls()
 
 ## TODO / Pull Requests Wanted
 
