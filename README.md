@@ -25,8 +25,8 @@ Go to http://127.0.0.1:8000/admin/ and login with username: **admin** and passwo
 
 ## TODO / Pull Requests Wanted
 
-- make pip installable
-- make installation simple by adding app to INSTALLED_APPS, MIDDLEWARE_CLASSES, or similar
+- <del>make pip installable</del>
+- <del>make installation simple by adding app to INSTALLED_APPS, MIDDLEWARE_CLASSES, or similar</del>
 - add "404 Not Found" destination
 - add exact match to permanent redirect 301
 - add exact match to temporary redirect 302
