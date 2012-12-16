@@ -35,9 +35,9 @@ Manage URL Patterns and Views via the Django admin.
 - <del>make pip installable</del>
 - <del>make installation simple by adding app to INSTALLED_APPS, MIDDLEWARE_CLASSES, or similar</del>
 - add "404 Not Found" destination
-- add exact match to permanent redirect 301
-- add exact match to temporary redirect 302
-- add regex match to permanent redirect 301
-- add regex match to temporary redirect 302
+- <del>add exact match to permanent redirect 301</del>
+- <del>add exact match to temporary redirect 302</del>
+- <del>add regex match to permanent redirect 301</del>
+- <del>add regex match to temporary redirect 302</del>
 - add regex match to include (e.g. add the ability to use a destination like include('django.contrib.admindocs.urls'))
 - add unit tests (relative redirect, absolute redirect, regex match, 404, etc.)

@@ -15,24 +15,25 @@ def django_urls():
         type = the_url.type
         view = the_url.destination
 
-        if type == 'exact_to_redirect':
+        # Exact matches
+        if type in ['exact_to_view',
+                    'exact_to_temporary_redirect',
+                    'exact_to_permanent_redirect',]:
             regex = r'^{0}$'.format(regex)
-            # URI scheme check
-            if not '://' in view:
-                # relative redirect
-                view = '/{0}'.format(view)
-            urlpatterns += patterns('', url(regex, RedirectView.as_view(url=view, permanent=False)),)
-        elif type == 'exact_to_view':
-            regex = r'^{0}$'.format(regex)
+
+        # Views
+        if type in ['regex_to_view', 'exact_to_view',]:
             urlpatterns += patterns('', url(regex, view),)
-        elif type == 'regex_to_redirect':
-            # URI scheme check
+        # Redirects
+        elif type in ['regex_to_temporary_redirect', 'regex_to_permanent_redirect',
+                      'exact_to_temporary_redirect', 'exact_to_permanent_redirect',]:
+            permanent = False
+            if type in ['regex_to_permanent_redirect', 'exact_to_permanent_redirect',]:
+                permanent = True
+            # Make url relative if needed by checking URI scheme
             if not '://' in view:
-                # relative redirect
                 view = '/{0}'.format(view)
-            urlpatterns += patterns('', url(regex, RedirectView.as_view(url=view, permanent=False)),)
-        elif type == 'regex_to_view':
-            urlpatterns += patterns('', url(regex, view),)
+            urlpatterns += patterns('', url(regex, RedirectView.as_view(url=view, permanent=permanent)),)
         else:
             continue
 
