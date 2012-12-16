@@ -22,7 +22,15 @@ class UrlAdmin(admin.ModelAdmin):
 
         if self.type in ['regex_to_temporary_redirect', 'regex_to_permanent_redirect',
                          'exact_to_temporary_redirect', 'exact_to_permanent_redirect',]:
-            column = '<pre><a href="/{0}" target="_blank"><span>/</span>{0}</a></pre>'.format(self.destination)
+            # Make url relative if needed by checking URI scheme
+            if not '://' in self.destination:
+                destination_href = '/{0}'.format(self.destination)
+                destination_text = '<span>/</span>{0}'.format(self.destination)
+            else:
+                destination_href = self.destination
+                destination_text = self.destination
+            column = '<pre><a href="{0}" target="_blank">{1}</a></pre>'.format(destination_href,
+                                                                               destination_text)
         elif self.type in ['regex_to_view', 'exact_to_view',]:
             param_list = re.findall(r'\(\?P<(.*?)>.*?\)', self.url)
             column = '<pre>{0}({1})</pre>'.format(self.destination, ', '.join(param_list))
