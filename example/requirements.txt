@@ -1,0 +1,7 @@
+Django
+-e git://github.com/django-urls/django-urls.git#egg=django_urls
+
+# Also useful
+#django-debug-toolbar
+#ipdb
+#ipython
