@@ -1,24 +1,6 @@
 [
     {
         "pk": 1,
-        "model": "auth.user",
-        "fields": {
-            "username": "admin",
-            "first_name": "",
-            "last_name": "",
-            "is_active": true,
-            "is_superuser": true,
-            "is_staff": true,
-            "last_login": "2012-12-01T00:00:00.000Z",
-            "groups": [],
-            "user_permissions": [],
-            "password": "pbkdf2_sha256$10000$ZO7POAPc8ZMI$xgYq0J7EXHIfrCFq1XCg0LvTyC2SlUltNjkvRVPQI48=",
-            "email": "admin@example.com",
-            "date_joined": "2012-12-01T00:00:00.000Z"
-        }
-    },
-    {
-        "pk": 1,
         "model": "django_urls.url",
         "fields": {
             "url": "robots.txt",
@@ -74,7 +56,7 @@
             "url": "old/old.htm",
             "enabled": true,
             "destination": "new/new.html",
-            "type": "exact_to_redirect"
+            "type": "exact_to_permanent_redirect"
         }
     },
     {
@@ -84,7 +66,17 @@
             "url": "^iphone|ipad|ipod|m$",
             "enabled": true,
             "destination": "mobile",
-            "type": "regex_to_redirect"
+            "type": "regex_to_temporary_redirect"
+        }
+    },
+    {
+        "pk": 8,
+        "model": "django_urls.url",
+        "fields": {
+            "url": "example",
+            "enabled": true,
+            "destination": "http://www.example.com/",
+            "type": "exact_to_temporary_redirect"
         }
     }
 ]
