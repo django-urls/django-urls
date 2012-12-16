@@ -8,9 +8,9 @@ from models import Url
 
 class UrlAdmin(admin.ModelAdmin):
     def url_column(self):
-        if self.type in ['exact_to_view', 'exact_to_redirect',]:
+        if self.type in ['exact_to_view', 'exact_to_temporary_redirect', 'exact_to_permanent_redirect',]:
             column = '<pre><span>^</span>{0}<span>$</span></pre>'.format(escape(self.url))
-        elif self.type in ['regex_to_view', 'regex_to_redirect',]:
+        elif self.type in ['regex_to_view', 'regex_to_temporary_redirect', 'regex_to_permanent_redirect',]:
             column = '<pre class="regex">{0}</pre>'.format(escape(self.url))
         else:
             column = '<pre>{0}</pre>'.format(self.url)
@@ -19,9 +19,11 @@ class UrlAdmin(admin.ModelAdmin):
     url_column.allow_tags = True
 
     def destination_column(self):
-        if self.type in ['exact_to_redirect', 'regex_to_redirect',]:
+
+        if self.type in ['regex_to_temporary_redirect', 'regex_to_permanent_redirect',
+                         'exact_to_temporary_redirect', 'exact_to_permanent_redirect',]:
             column = '<pre><a href="/{0}" target="_blank"><span>/</span>{0}</a></pre>'.format(self.destination)
-        elif self.type in ['exact_to_view', 'regex_to_view',]:
+        elif self.type in ['regex_to_view', 'exact_to_view',]:
             param_list = re.findall(r'\(\?P<(.*?)>.*?\)', self.url)
             column = '<pre>{0}({1})</pre>'.format(self.destination, ', '.join(param_list))
         else:
