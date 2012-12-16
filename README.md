@@ -42,4 +42,4 @@ Manage URL Patterns and Views via the Django admin.
 - add regex match to include (e.g. add the ability to use a destination like include('django.contrib.admindocs.urls'))
 - add unit tests (relative redirect, absolute redirect, regex match, 404, etc.)
 - add Url.order as "Django runs through each URL pattern, in order, and stops at the first one that matches the requested URL."
-- add inline file editing for destination views using [ajaxorg/ace](https://github.com/ajaxorg/ace)
+- add file editing for destination views using a modal and [ajaxorg/ace](https://github.com/ajaxorg/ace)
