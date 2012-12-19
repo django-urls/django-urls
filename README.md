@@ -34,7 +34,7 @@ Manage URL Patterns and Views via the Django admin.
 
 - <del>make pip installable</del>
 - <del>make installation simple by adding app to INSTALLED_APPS, MIDDLEWARE_CLASSES, or similar</del>
-- add "404 Not Found" destination
+- <del>add "404 Not Found" destination (not needed as disabling a url it raises 404)</del>
 - <del>add exact match to permanent redirect 301</del>
 - <del>add exact match to temporary redirect 302</del>
 - <del>add regex match to permanent redirect 301</del>
